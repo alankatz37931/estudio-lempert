@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudios Lempert | Asesoría Contable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body { color: #333; line-height: 1.6; }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a3a5a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #1a3a5a; font-weight: 700; }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(26, 58, 90, 0.7), rgba(26, 58, 90, 0.7)), 
+                        url('https://facs.ort.edu.uy/innovaportal/file/134725/1/responsabilidades-de-un-contador-publico.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; }
+
+        .btn-ws {
+            background: transparent;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 400;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid white; 
+        }
+
+        .btn-ws:hover { background: white; color: #1a3a5a; }
+
+        /* Botón Flotante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover { background-color: #128c7e; transform: translateY(-5px); }
+
+        /* Secciones - AJUSTE DE ESPACIADO */
+        section { padding: 80px 10%; text-align: center; } /* Reducido de 100px a 80px */
+        
+        .section-title { font-size: 2rem; color: #1a3a5a; margin-bottom: 40px; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 40px;
+            background: #f8f9fa;
+            border-bottom: 4px solid #1a3a5a;
+            transition: 0.4s;
+        }
+
+        .service-card:hover { background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        /* Contacto - AJUSTE DE ESPACIADO SUPERIOR */
+        .contact-section {
+            background-color: #fff;
+            padding-top: 20px; /* Reducido drásticamente para que se pegue a servicios */
+            padding-bottom: 80px;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; color: #1a3a5a; font-size: 14px; }
+        .form-control { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; outline: none; transition: 0.3s; }
+        .form-control:focus { border-color: #1a3a5a; box-shadow: 0 0 5px rgba(26, 58, 90, 0.2); }
+
+        .btn-submit {
+            background: #1a3a5a;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover { background: #2c527a; }
+
+        footer { background: #1a3a5a; color: white; padding: 40px; text-align: center; }
+
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/59897955967?text=Hola,%20me%20gustaría%20consultar%20por%20los%20servicios%20de%20Estudios%20Lempert" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="logo">Estudios Lempert</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto-form">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Gestión Contable Profesional</h1>
+        <p>Tu tranquilidad fiscal es nuestro compromiso. Asesoramiento personalizado para empresas y particulares en Uruguay.</p>
+        <a href="https://wa.me/59897955967?text=Hola,%20quiero%20agendar%20una%20consulta" class="btn-ws" target="_blank">
+            <i class="fab fa-whatsapp"></i> AGENDAR CONSULTA
+        </a>
+    </section>
+
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-calculator" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Liquidación de Impuestos</h3>
+                <p>Gestión eficiente de DGI y BPS para que cumplas sin pagar de más.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-invoice-dollar" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Balances y Auditoría</h3>
+                <p>Informes financieros detallados para la toma de decisiones estratégicas.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Recursos Humanos</h3>
+                <p>Liquidación de haberes, altas/bajas y asesoramiento laboral integral.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-briefcase" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Constitución de Empresas</h3>
+                <p>Asesoramiento en la elección de la forma jurídica (SAS, SRL, SA) y registro completo ante organismos.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chart-line" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Asesoría Financiera</h3>
+                <p>Análisis de rentabilidad, proyecciones de flujo de caja y gestión de costos.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Defensa ante Inspecciones</h3>
+                <p>Representación y asistencia técnica profesional ante requerimientos de DGI, BPS o MTSS.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-qrcode" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Facturación Electrónica</h3>
+                <p>Asesoramiento e implementación de sistemas cumpliendo con la normativa de DGI.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tasks" style="font-size: 2rem; color: #1a3a5a; margin-bottom: 15px;"></i>
+                <h3>Gestoría Administrativa</h3>
+                <p>Trámites ante organismos públicos e Intendencias para que usted no pierda tiempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contacto-form">
+        <div class="contact-container">
+            <h2 class="section-title" style="text-align: center;">Envíenos su consulta</h2>
+            <form id="whatsapp-form">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.com">
+                </div>
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <input type="text" id="asunto" class="form-control" placeholder="Contabilidad General">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea id="mensaje" class="form-control" rows="5" placeholder="Cuéntenos brevemente su necesidad..."></textarea>
+                </div>
+                <button type="button" onclick="enviarWhatsApp()" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <h3>¿Hablamos?</h3>
+        <p style="margin: 15px 0;">Estamos listos para ayudarte con tu contabilidad.</p>
+        <p>Montevideo, Uruguay</p>
+        <p><b>WhatsApp: +598 97 955 967</b></p>
+    </footer>
+
+    <script>
+        function enviarWhatsApp() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const asunto = document.getElementById('asunto').value;
+            const mensaje = document.getElementById('mensaje').value;
+            const num = "59897955967";
+
+            
+            const texto = mensaje;
+            window.open(`https://wa.me/${num}?text=${texto}`, '_blank');
+            
+        }
+    </script>
+
+</body>
+</html>
